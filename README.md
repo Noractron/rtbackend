@@ -35,10 +35,10 @@ $ serverless deploy
 
 To deploy without the dashboard you will need to remove `org` and `app` fields from the `serverless.yml`, and you won’t have to run `sls login` before deploying.
 
-**Invoke the function locally.**
+**Invoke the function locally for unit testing and swagger**
 
 ```
-npm start on port 3000
+npm start on npm run dev
 ```
 
 **Invoke the function**
@@ -50,3 +50,4 @@ curl https://gun2z76655.execute-api.us-east-1.amazonaws.com/dev/
 **Contratiempos**
 Se tuvo problemas con los tiempos para poder trabajar, el dia viernes en la tarde trabaje con el reto tercnico, por que estaba de viaje, entiendo que las excusas no valen,
 pero espero que tomen en consideracion, gracias
+
