@@ -1,0 +1,104 @@
+service: rtbackend
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  lambdaHashingVersion: "20201221"
+  apiName: ${opt:stage, self:provider.stage, 'dev'}
+  environment:
+    host: us-cdbr-east-02.cleardb.com
+    database: heroku_d3b6bd4839d6230
+    username: bc79d7b3907b3a
+    ENV: dev
+    password: 21636b73
+    NODE_ENV: production
+
+functions:
+  rtbackend:
+    handler: index.handler
+    events:
+      - http:
+          path: /api/v1/personajes
+          method: get
+      - http:
+          path: /api/v1/personajes/{id}
+          method: get
+      - http:
+          path: /api/v1/personajes
+          method: post
+      - http:
+          path: /api/v1/personajes/{id}
+          method: put
+      - http:
+          path: /api/v1/personajes/{id}
+          method: delete
+      - http:
+          path: /api/v1/entrenador
+          method: get
+      - http:
+          path: /api/v1/entrenador/{id}
+          method: get
+      - http:
+          path: /api/v1/entrenador
+          method: post
+      - http:
+          path: /api/v1/entrenador/{id}
+          method: put
+      - http:
+          path: /api/v1/entrenador/{id}
+          method: delete
+      - http:
+          path: /api/v1/zona-ejercicio
+          method: get
+      - http:
+          path: /api/v1/zona-ejercicio/{id}
+          method: get
+      - http:
+          path: /api/v1/zona-ejercicio
+          method: post
+      - http:
+          path: /api/v1/zona-ejercicio/{id}
+          method: put
+      - http:
+          path: /api/v1/zona-ejercicio/{id}
+          method: delete
+      - http:
+          path: /api/v1/people
+          method: get
+      - http:
+          path: /api/v1/people/{id}
+          method: get
+      - http:
+          path: /api/v1/planet
+          method: get
+      - http:
+          path: /api/v1/planet/{id}
+          method: get
+      - http:
+          path: /api/v1/film
+          method: get
+      - http:
+          path: /api/v1/film/{id}
+          method: get
+      - http:
+          path: /api/v1/starShip
+          method: get
+      - http:
+          path: /api/v1/starShip/{id}
+          method: get
+      - http:
+          path: /api/v1/vehicle
+          method: get
+      - http:
+          path: /api/v1/vehicle/{id}
+          method: get
+      - http:
+          path: /api/v1/species
+          method: get
+      - http:
+          path: /api/v1/species/{id}
+          method: get
+
+plugins:
+  - serverless-offline

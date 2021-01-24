@@ -1,0 +1,12 @@
+
+{
+  "local": {
+    "username": "root",
+    "password": "",
+    "database": "heroku_d3b6bd4839d6230",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
+
+
